@@ -3,4 +3,9 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-export const hello = (name: string): string => `Hello ${name}`;
+export * from "./entity/balance";
+export * from "./entity/costumer";
+export * from "./entity/part";
+export * from "./entity/report";
+export * from "./entity/serv";
+export * from "./entity/tx";

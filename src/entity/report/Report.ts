@@ -6,7 +6,7 @@
 import { StatusPayment } from "../../util/enum";
 import { Payment } from "./../tx/Payment";
 
-export default class Report {
+export class Report {
   private status = StatusPayment.PAID;
   private payments = new Array<Payment>();
   constructor(options?: { status?: StatusPayment; payments?: Payment[] }) {

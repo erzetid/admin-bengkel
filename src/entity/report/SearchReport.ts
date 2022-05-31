@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 import { StatusPayment } from "../../util/enum";
-import Report from "./Report";
+import { Report } from "./Report";
 import { Payment } from "../tx/Payment";
 
 export class SearchReport {
