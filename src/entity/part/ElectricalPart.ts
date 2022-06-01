@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-import { Part } from "./Part";
+import Part from "./Part";
 
 export class ElectricalPart extends Part {
   constructor(id: string, name: string) {
