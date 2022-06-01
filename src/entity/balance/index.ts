@@ -6,8 +6,8 @@
 export default class Balance {
   private _savingsBalance: number;
 
-  constructor(savingsBalance: number) {
-    this._savingsBalance = savingsBalance;
+  constructor(incomeBalance: number, creditBalance = 0) {
+    this._savingsBalance = incomeBalance + creditBalance;
   }
 
   getBalance(): number {
@@ -22,3 +22,6 @@ export default class Balance {
     this._savingsBalance -= amount;
   }
 }
+
+const balance = new Balance(1000);
+console.log(balance.getBalance());
