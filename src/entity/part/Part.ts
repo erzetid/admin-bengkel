@@ -9,7 +9,7 @@ interface IPart {
   time: number;
 }
 
-export default abstract class Part {
+export abstract class Part {
   private price = 0;
   private quantity = 0;
   private discount = 0;
