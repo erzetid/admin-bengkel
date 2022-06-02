@@ -17,14 +17,16 @@ export default abstract class CashFlow {
     this.detail = detail;
   }
 
-  income(income: number): void {
+  income(income: number): CashFlow {
     this.total += income;
     this.type = CashType.INCOME;
+    return this;
   }
 
-  outcome(outcome: number): void {
+  outcome(outcome: number): CashFlow {
     this.total -= outcome;
     this.type = CashType.OUTCOME;
+    return this;
   }
 
   toJSON() {
