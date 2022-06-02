@@ -8,3 +8,14 @@ export enum StatusPayment {
   UNPAID = "UNPAID",
   CANCELED = "CANCELED",
 }
+
+export enum CashType {
+  INCOME = "income",
+  OUTCOME = "outcome",
+}
+
+export enum CashCategory {
+  DIRECT = "direct",
+  PART = "part",
+  TRANSACTION = "transaction",
+}
