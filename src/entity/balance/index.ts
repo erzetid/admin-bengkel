@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-export default class Balance {
+export class Balance {
   private _savingsBalance: number;
 
   constructor(incomeBalance: number, creditBalance = 0) {
