@@ -9,18 +9,6 @@ import { Payment } from "../tx/Payment";
 
 export class SearchReport {
   private payments = new Array<Payment>();
-  searchById(id: string): Report {
-    const payment = this.payments.find((payment) => payment.getId() === id);
-
-    if (payment) {
-      return new Report({
-        payments: [payment],
-      });
-    }
-
-    throw new Error("Payment not found");
-  }
-
   searchByStatus(status: StatusPayment): Report {
     return new Report({ status });
   }
