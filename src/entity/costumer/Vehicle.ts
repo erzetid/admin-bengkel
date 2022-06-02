@@ -4,7 +4,6 @@
 // https://opensource.org/licenses/MIT
 
 interface IVehicle {
-  id: string;
   brand: string;
   model: string;
   year: number;
@@ -14,7 +13,6 @@ interface IVehicle {
 }
 
 export class Vehicle {
-  private id: string;
   private brand = "No Brand";
   private model = "No Model";
   private year = 2000;
@@ -22,26 +20,19 @@ export class Vehicle {
   private registrationNumber = "No Registration Number";
   private owner = "No Owner";
 
-  constructor(data: {
-    id: string;
+  constructor(data?: {
     owner?: string;
     brand?: string;
     model?: string;
     year?: number;
     registrationNumber?: string;
   }) {
-    this.id = data.id;
-    this.owner = data.owner || this.owner;
-    this.brand = data.brand || this.brand;
-    this.model = data.model || this.model;
-    this.year = data.year || this.year;
+    this.owner = data?.owner || this.owner;
+    this.brand = data?.brand || this.brand;
+    this.model = data?.model || this.model;
+    this.year = data?.year || this.year;
     this.registrationNumber =
-      data.registrationNumber || this.registrationNumber;
-  }
-
-  setId(id: string): Vehicle {
-    this.id = id;
-    return this;
+      data?.registrationNumber || this.registrationNumber;
   }
 
   setBrand(brand: string): Vehicle {
@@ -69,9 +60,6 @@ export class Vehicle {
     return this;
   }
 
-  getId(): string {
-    return this.id;
-  }
   getBrand(): string {
     return this.brand;
   }
@@ -90,7 +78,6 @@ export class Vehicle {
 
   toJSON(): IVehicle {
     return {
-      id: this.id,
       owner: this.owner,
       brand: this.brand,
       model: this.model,

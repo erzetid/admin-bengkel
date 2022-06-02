@@ -6,7 +6,7 @@
 import Part from "./Part";
 
 export class FramePart extends Part {
-  constructor(id: string, name: string) {
-    super(id, name, "frame");
+  constructor(name: string) {
+    super(name, "frame");
   }
 }

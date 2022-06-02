@@ -117,11 +117,10 @@ export class Transaction {
 
   getDetail(): Detail {
     const servs = this.servs.map((serv) => {
-      return { id: serv.getId(), name: serv.getName(), price: serv.getPrice() };
+      return { name: serv.getName(), price: serv.getPrice() };
     });
     const parts = this.parts.map((part) => {
       return {
-        id: part.getId(),
         name: part.getName(),
         price: part.getPrice(),
         quantity: part.getQuantity(),

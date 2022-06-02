@@ -1,5 +1,4 @@
 interface IPart {
-  id: string;
   name: string;
   price: number;
   quantity: number;
@@ -18,11 +17,9 @@ export default abstract class Part {
   private time = Date.now();
 
   constructor(
-    private readonly id: string,
     private readonly name: string,
     private readonly category: string
   ) {
-    this.id = id;
     this.name = name;
     this.category = category;
   }
@@ -55,10 +52,6 @@ export default abstract class Part {
   setTime(time: number): Part {
     this.time = time;
     return this;
-  }
-
-  getId(): string {
-    return this.id;
   }
 
   getName(): string {
@@ -107,7 +100,6 @@ export default abstract class Part {
 
   toJSON(): IPart {
     return {
-      id: this.id,
       name: this.name,
       price: this.price,
       quantity: this.quantity,

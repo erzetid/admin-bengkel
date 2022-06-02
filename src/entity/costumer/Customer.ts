@@ -4,20 +4,17 @@
 // https://opensource.org/licenses/MIT
 
 interface ICustomer {
-  id: string;
   name: string;
   phone: string;
   address: string;
 }
 
 export class Customer {
-  private id: string;
   private name: string;
   private phone = "";
   private address = "";
 
-  constructor(id: string, name: string) {
-    this.id = id;
+  constructor(name: string) {
     this.name = name;
   }
 
@@ -30,10 +27,6 @@ export class Customer {
     this.address = address;
     return this;
   }
-
-  getId(): string {
-    return this.id;
-  }
   getName(): string {
     return this.name;
   }
@@ -45,11 +38,6 @@ export class Customer {
   }
 
   toJSON(): ICustomer {
-    return {
-      id: this.id,
-      name: this.name,
-      phone: this.phone,
-      address: this.address,
-    };
+    return { name: this.name, phone: this.phone, address: this.address };
   }
 }

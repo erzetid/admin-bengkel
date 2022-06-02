@@ -4,7 +4,6 @@
 // https://opensource.org/licenses/MIT
 
 interface IPart {
-  id: string;
   name: string;
   price: number;
   processTime: number;
@@ -21,12 +20,7 @@ export default abstract class Serv {
   private category: string;
   private time = Date.now();
 
-  constructor(
-    private readonly id: string,
-    private readonly name: string,
-    category: string
-  ) {
-    this.id = id;
+  constructor(private readonly name: string, category: string) {
     this.name = name;
     this.category = category;
   }
@@ -54,10 +48,6 @@ export default abstract class Serv {
   setDiscount(percent: number): Serv {
     this.discount = percent;
     return this;
-  }
-
-  getId(): string {
-    return this.id;
   }
 
   getName(): string {
@@ -102,7 +92,6 @@ export default abstract class Serv {
 
   toJSON(): IPart {
     return {
-      id: this.id,
       name: this.name,
       price: this.price,
       processTime: this.processTime,

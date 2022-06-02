@@ -5,13 +5,11 @@
 
 export interface IDetail {
   parts: {
-    id: string;
     name: string;
     price: number;
     quantity: number;
   }[];
   servs: {
-    id: string;
     name: string;
     price: number;
   }[];
@@ -29,12 +27,11 @@ export interface IDetail {
 
 export class Detail implements IDetail {
   readonly parts: {
-    id: string;
     name: string;
     price: number;
     quantity: number;
   }[];
-  readonly servs: { id: string; name: string; price: number }[];
+  readonly servs: { name: string; price: number }[];
   readonly totalPartPrice: number;
   readonly totalPartWithDiscount: number;
   readonly totalServPrice: number;
@@ -47,8 +44,8 @@ export class Detail implements IDetail {
   readonly createdAt = Date.now();
 
   constructor(
-    parts: { id: string; name: string; price: number; quantity: number }[],
-    servs: { id: string; name: string; price: number }[],
+    parts: { name: string; price: number; quantity: number }[],
+    servs: { name: string; price: number }[],
     totalPartPrice: number,
     totalPartWithDiscount: number,
     totalServPrice: number,

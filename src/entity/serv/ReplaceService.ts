@@ -6,7 +6,7 @@
 import Serv from "./Serv";
 
 export class ReplaceService extends Serv {
-  constructor(id: string, name: string) {
-    super(id, name, "replace");
+  constructor(name: string) {
+    super(name, "replace");
   }
 }

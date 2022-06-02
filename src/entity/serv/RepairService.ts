@@ -6,7 +6,7 @@
 import Serv from "./Serv";
 
 export class RepairService extends Serv {
-  constructor(id: string, name: string) {
-    super(id, name, "repair");
+  constructor(name: string) {
+    super(name, "repair");
   }
 }

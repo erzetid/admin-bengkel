@@ -24,7 +24,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalPartPrice;
+        total += payment.data.totalPartPrice;
     });
     return total;
   }
@@ -33,7 +33,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalPartWithDiscount;
+        total += payment.data.totalPartWithDiscount;
     });
     return total;
   }
@@ -42,7 +42,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalServPrice;
+        total += payment.data.totalServPrice;
     });
     return total;
   }
@@ -51,7 +51,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalServWithDiscount;
+        total += payment.data.totalServWithDiscount;
     });
     return total;
   }
@@ -59,8 +59,7 @@ export class Report {
   getIncomeTotal() {
     let total = 0;
     this.payments.forEach((payment) => {
-      if (payment.getStatus() === this.status)
-        total += payment._data.totalPrice;
+      if (payment.getStatus() === this.status) total += payment.data.totalPrice;
     });
     return total;
   }
@@ -69,7 +68,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalWithDiscount;
+        total += payment.data.totalWithDiscount;
     });
     return total;
   }
@@ -78,7 +77,7 @@ export class Report {
     let total = 0;
     this.payments.forEach((payment) => {
       if (payment.getStatus() === this.status)
-        total += payment._data.totalWithTax;
+        total += payment.data.totalWithTax;
     });
     return total;
   }
@@ -86,7 +85,7 @@ export class Report {
   getIncomeTotalTax() {
     let total = 0;
     this.payments.forEach((payment) => {
-      if (payment.getStatus() === this.status) total += payment._data.totalTax;
+      if (payment.getStatus() === this.status) total += payment.data.totalTax;
     });
     return total;
   }
