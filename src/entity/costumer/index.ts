@@ -4,3 +4,4 @@
 // https://opensource.org/licenses/MIT
 
 export { Customer } from "./Customer";
+export { Vehicle } from "./Vehicle";
