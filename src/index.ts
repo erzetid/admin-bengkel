@@ -10,4 +10,4 @@ export * from "./entity/costumer";
 export * from "./entity/part";
 export * from "./entity/report";
 export * from "./entity/serv";
-export * from "./entity/tx";
+export * from "./entity/transaction";
