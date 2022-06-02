@@ -13,7 +13,7 @@ interface IVehicle {
   owner: string;
 }
 
-export default class Vehicle {
+export class Vehicle {
   private _id: string;
   private _brand = "No Brand";
   private _model = "No Model";
