@@ -13,50 +13,50 @@ interface IPayment extends IDetail {
 }
 
 export class Payment {
-  private readonly _id: string;
-  readonly _data: Detail;
-  private _status = StatusPayment.PENDING;
-  private readonly _time = Date.now();
+  private readonly id: string;
+  readonly data: Detail;
+  private status = StatusPayment.PENDING;
+  private readonly time = Date.now();
 
   constructor(id: string, data: Detail) {
-    this._id = id;
-    this._data = data;
+    this.id = id;
+    this.data = data;
   }
 
   getId(): string {
-    return this._id;
+    return this.id;
   }
 
   getTime(): number {
-    return this._time;
+    return this.time;
   }
 
   getStatus(): StatusPayment {
-    return this._status;
+    return this.status;
   }
 
   pending() {
-    this._status = StatusPayment.PENDING;
+    this.status = StatusPayment.PENDING;
   }
 
   paid() {
-    this._status = StatusPayment.PAID;
+    this.status = StatusPayment.PAID;
   }
 
   unpaid() {
-    this._status = StatusPayment.UNPAID;
+    this.status = StatusPayment.UNPAID;
   }
 
   canceled() {
-    this._status = StatusPayment.CANCELED;
+    this.status = StatusPayment.CANCELED;
   }
 
   toJSON(): IPayment {
     return {
-      id: this._id,
-      status: this._status,
-      time: this._time,
-      ...this._data.toJSON(),
+      id: this.id,
+      status: this.status,
+      time: this.time,
+      ...this.data.toJSON(),
     };
   }
 }

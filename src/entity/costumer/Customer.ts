@@ -11,45 +11,45 @@ interface ICustomer {
 }
 
 export class Customer {
-  private _id: string;
-  private _name: string;
-  private _phone = "";
-  private _address = "";
+  private id: string;
+  private name: string;
+  private phone = "";
+  private address = "";
 
   constructor(id: string, name: string) {
-    this._id = id;
-    this._name = name;
+    this.id = id;
+    this.name = name;
   }
 
   setPhone(phone: string): Customer {
-    this._phone = phone;
+    this.phone = phone;
     return this;
   }
 
   setAddress(address: string): Customer {
-    this._address = address;
+    this.address = address;
     return this;
   }
 
   getId(): string {
-    return this._id;
+    return this.id;
   }
   getName(): string {
-    return this._name;
+    return this.name;
   }
   getPhone(): string {
-    return this._phone;
+    return this.phone;
   }
   getAddress(): string {
-    return this._address;
+    return this.address;
   }
 
   toJSON(): ICustomer {
     return {
-      id: this._id,
-      name: this._name,
-      phone: this._phone,
-      address: this._address,
+      id: this.id,
+      name: this.name,
+      phone: this.phone,
+      address: this.address,
     };
   }
 }

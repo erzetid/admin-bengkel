@@ -4,22 +4,22 @@
 // https://opensource.org/licenses/MIT
 
 export class Balance {
-  private _savingsBalance: number;
+  private savingsBalance: number;
 
   constructor(incomeBalance: number, creditBalance = 0) {
-    this._savingsBalance = incomeBalance + creditBalance;
+    this.savingsBalance = incomeBalance + creditBalance;
   }
 
   getBalance(): number {
-    return this._savingsBalance;
+    return this.savingsBalance;
   }
 
   deposit(amount: number): void {
-    this._savingsBalance += amount;
+    this.savingsBalance += amount;
   }
 
   withdraw(amount: number): void {
-    this._savingsBalance -= amount;
+    this.savingsBalance -= amount;
   }
 }
 

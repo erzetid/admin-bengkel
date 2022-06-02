@@ -14,13 +14,13 @@ interface IVehicle {
 }
 
 export class Vehicle {
-  private _id: string;
-  private _brand = "No Brand";
-  private _model = "No Model";
-  private _year = 2000;
-  private _plate = "No Plate";
-  private _registrationNumber = "No Registration Number";
-  private _owner = "No Owner";
+  private id: string;
+  private brand = "No Brand";
+  private model = "No Model";
+  private year = 2000;
+  private plate = "No Plate";
+  private registrationNumber = "No Registration Number";
+  private owner = "No Owner";
 
   constructor(data: {
     id: string;
@@ -30,73 +30,73 @@ export class Vehicle {
     year?: number;
     registrationNumber?: string;
   }) {
-    this._id = data.id;
-    this._owner = data.owner || this._owner;
-    this._brand = data.brand || this._brand;
-    this._model = data.model || this._model;
-    this._year = data.year || this._year;
-    this._registrationNumber =
-      data.registrationNumber || this._registrationNumber;
+    this.id = data.id;
+    this.owner = data.owner || this.owner;
+    this.brand = data.brand || this.brand;
+    this.model = data.model || this.model;
+    this.year = data.year || this.year;
+    this.registrationNumber =
+      data.registrationNumber || this.registrationNumber;
   }
 
   setId(id: string): Vehicle {
-    this._id = id;
+    this.id = id;
     return this;
   }
 
   setBrand(brand: string): Vehicle {
-    this._brand = brand;
+    this.brand = brand;
     return this;
   }
 
   setModel(model: string): Vehicle {
-    this._model = model;
+    this.model = model;
     return this;
   }
 
   setYear(year: number): Vehicle {
-    this._year = year;
+    this.year = year;
     return this;
   }
 
   setPlate(plate: string): Vehicle {
-    this._plate = plate;
+    this.plate = plate;
     return this;
   }
 
   setRegistrationNumber(registrationNumber: string): Vehicle {
-    this._registrationNumber = registrationNumber;
+    this.registrationNumber = registrationNumber;
     return this;
   }
 
   getId(): string {
-    return this._id;
+    return this.id;
   }
   getBrand(): string {
-    return this._brand;
+    return this.brand;
   }
   getModel(): string {
-    return this._model;
+    return this.model;
   }
   getYear(): number {
-    return this._year;
+    return this.year;
   }
   getPlate(): string {
-    return this._plate;
+    return this.plate;
   }
   getRegistrationNumber(): string {
-    return this._registrationNumber;
+    return this.registrationNumber;
   }
 
   toJSON(): IVehicle {
     return {
-      id: this._id,
-      owner: this._owner,
-      brand: this._brand,
-      model: this._model,
-      year: this._year,
-      plate: this._plate,
-      registrationNumber: this._registrationNumber,
+      id: this.id,
+      owner: this.owner,
+      brand: this.brand,
+      model: this.model,
+      year: this.year,
+      plate: this.plate,
+      registrationNumber: this.registrationNumber,
     };
   }
 }
