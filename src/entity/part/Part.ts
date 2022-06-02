@@ -1,5 +1,6 @@
 interface IPart {
   name: string;
+  code: string;
   price: number;
   quantity: number;
   description: string;
@@ -11,14 +12,15 @@ interface IPart {
 export default abstract class Part {
   private price = 0;
   private quantity = 0;
-  private discount = 0;
   private description = "No description";
+  private discount = 0;
   private image = "";
   private time = Date.now();
 
   constructor(
     private readonly name: string,
-    private readonly category: string
+    private readonly category: string,
+    private readonly code: string
   ) {
     this.name = name;
     this.category = category;
@@ -56,6 +58,10 @@ export default abstract class Part {
 
   getName(): string {
     return this.name;
+  }
+
+  getCode(): string {
+    return this.code;
   }
 
   getPrice(): number {
@@ -101,6 +107,7 @@ export default abstract class Part {
   toJSON(): IPart {
     return {
       name: this.name,
+      code: this.code,
       price: this.price,
       quantity: this.quantity,
       description: this.description,

@@ -5,6 +5,7 @@
 
 interface IPart {
   name: string;
+  code: string;
   price: number;
   processTime: number;
   description: string;
@@ -20,8 +21,11 @@ export default abstract class Serv {
   private category: string;
   private time = Date.now();
 
-  constructor(private readonly name: string, category: string) {
-    this.name = name;
+  constructor(
+    private readonly name: string,
+    private code: string,
+    category: string
+  ) {
     this.category = category;
   }
 
@@ -48,6 +52,10 @@ export default abstract class Serv {
   setDiscount(percent: number): Serv {
     this.discount = percent;
     return this;
+  }
+
+  getCode(): string {
+    return this.code;
   }
 
   getName(): string {
@@ -93,6 +101,7 @@ export default abstract class Serv {
   toJSON(): IPart {
     return {
       name: this.name,
+      code: this.code,
       price: this.price,
       processTime: this.processTime,
       description: this.description,

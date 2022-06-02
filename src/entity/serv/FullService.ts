@@ -6,7 +6,7 @@
 import Serv from "./Serv";
 
 export class FullService extends Serv {
-  constructor(name: string) {
-    super(name, "full");
+  constructor(name: string, code: string) {
+    super(name, code, "full");
   }
 }

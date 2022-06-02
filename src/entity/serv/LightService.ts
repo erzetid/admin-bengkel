@@ -6,7 +6,7 @@
 import Serv from "./Serv";
 
 export class LightService extends Serv {
-  constructor(name: string) {
-    super(name, "light");
+  constructor(name: string, code: string) {
+    super(name, code, "light");
   }
 }

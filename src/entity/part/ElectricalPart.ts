@@ -6,7 +6,7 @@
 import Part from "./Part";
 
 export class ElectricalPart extends Part {
-  constructor(name: string) {
-    super(name, "electrical");
+  constructor(name: string, code: string) {
+    super(name, "electrical", code);
   }
 }
