@@ -12,10 +12,16 @@ export enum StatusPayment {
 export enum CashType {
   INCOME = "income",
   OUTCOME = "outcome",
+  NOT_SET = "not_set",
 }
 
 export enum CashCategory {
   DIRECT = "direct",
   PART = "part",
   TRANSACTION = "transaction",
+}
+
+export enum TransactionType {
+  SERV = "serv",
+  PART = "part",
 }
