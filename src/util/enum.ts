@@ -25,3 +25,8 @@ export enum TransactionType {
   SERV = "serv",
   PART = "part",
 }
+
+export enum FavoriteType {
+  SERV = "serv",
+  PART = "part",
+}
